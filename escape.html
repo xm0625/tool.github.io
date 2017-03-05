@@ -1,0 +1,27 @@
+<html>
+<head>
+<title>icloud-filter</title>
+  <script id="oScript" type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.js"></script>
+</head>
+
+<body>
+  <textarea onblur="filterTextArea()" style="width:80%; height:500px">
+    
+  </textarea>
+  
+  <script>
+    function filterTextArea(){
+      var result = "";
+      var text = $("textarea").val();
+      for(var i=0;i<text.length;i++){
+        if(text.charCodeAt(i)==8203){
+          result += "\n";
+        }else{
+          result += text.charAt(i);
+        }
+      }
+      $("textarea").val(result);
+    }
+  </script>
+</body>
+</html>
