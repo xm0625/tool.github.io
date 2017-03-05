@@ -18,7 +18,7 @@
       var specialCharArray = $("specialChar").val().split("");
       for(var i=0;i<text.length;i++){
         if(text.charAt(i) in specialCharArray){
-          result = result + "\" + text.charAt(i);
+          result = result + "\\" + text.charAt(i);
         }else{
           result += text.charAt(i);
         }
