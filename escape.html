@@ -5,7 +5,8 @@
 </head>
 
 <body>
-  <textarea onblur="filterTextArea()" style="width:80%; height:500px">
+  <input id="specialChar" value="'\"  style="width:80%;"/>
+  <textarea onblur="filterTextArea()" style="width:80%; height:500px;">
     
   </textarea>
   
@@ -13,9 +14,10 @@
     function filterTextArea(){
       var result = "";
       var text = $("textarea").val();
+      var specialCharArray = $("specialChar").val().split("");
       for(var i=0;i<text.length;i++){
-        if(text.charCodeAt(i)==8203){
-          result += "\n";
+        if(text.charAt(i) in specialCharArray){
+          result = result + "\" + text.charAt(i);
         }else{
           result += text.charAt(i);
         }
