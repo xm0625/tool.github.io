@@ -1,14 +1,17 @@
 <html>
 <head>
-<title>icloud-filter</title>
+<title>escape</title>
   <script id="oScript" type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.js"></script>
 </head>
 
 <body>
-  <input id="specialChar" value="'\"  style="width:80%;"/>
+  <input id="specialChar" style="width:80%;"/>
   <textarea onblur="filterTextArea()" style="width:80%; height:500px;"></textarea>
   
   <script>
+    var initSpecialChar = "\"\\";
+    $("specialChar").val(initSpecialChar);
+    
     function filterTextArea(){
       var result = "";
       var text = $("textarea").val();
